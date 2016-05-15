@@ -33,10 +33,7 @@ class PostController extends Controller
             return $this->redirectToRoute('post_show', array('id' => $post->getId()));
         }
 
-        return $this->render('EgWallBundle:post:new.html.twig', array(
-            'post' => $post,
-            'form' => $form->createView(),
-        ));
+        return $this->redirectToRoute('eg_wall_homepage');
     }
 
     /**

@@ -4,6 +4,15 @@
 
 {% block body %}
 
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="text-right">
+            <input type="submit" value="Publier" class="btn btn-success"/>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
     {% for post in posts %}
         <div>
             <small class="text-muted">{{ post.pseudo }}, le {{ post.datePosted | date("m/d/Y") }} | Catégorie(s) :
