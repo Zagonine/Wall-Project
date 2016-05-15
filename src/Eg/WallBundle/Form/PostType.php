@@ -16,10 +16,11 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('pseudo')
-            ->add('content')
+            ->add('pseudo', null, array('label' => false, 'attr' => array('placeholder' => 'Votre Pseudo...')))
+            ->add('content', null, array('label' => false, 'attr' => array('placeholder' => 'Entrer votre message ici, sans oublier de choisir les catégories !')))
             //->add('categories')
             ->add('categories', 'entity', array(
+                'label'         => false,
                 'class'         => 'Eg\WallBundle\Entity\Category',
                 'expanded'      => true,
                 'multiple'      => true,
