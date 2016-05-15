@@ -43,6 +43,11 @@ class Post
     private $datePosted;
 
 
+    public function __construct()
+    {
+        $this->datePosted = new \DateTime();
+    }
+
     /**
      * Get id
      *
