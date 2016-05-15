@@ -22,7 +22,7 @@ class HomeController extends Controller
 
         //Create Form insert Post
         $post = new Post();
-        $form = $this->createForm('Eg\WallBundle\Form\PostType', $post);
+        $form = $this->createForm('Eg\WallBundle\Form\PostType', $post, array('action' => $this->generateUrl('post_new')));
         
         return $this->render('EgWallBundle:Home:index.html.twig', array(
             'posts' => $posts,

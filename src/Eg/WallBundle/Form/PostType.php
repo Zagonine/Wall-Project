@@ -17,7 +17,6 @@ class PostType extends AbstractType
         $builder
             ->add('pseudo')
             ->add('content')
-            ->add('datePosted', 'datetime')
             ->add('categories')
         ;
     }

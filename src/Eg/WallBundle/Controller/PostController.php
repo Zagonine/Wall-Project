@@ -14,7 +14,7 @@ use Eg\WallBundle\Form\PostType;
  */
 class PostController extends Controller
 {
-    
+
     /**
      * Creates a new Post entity.
      *
@@ -24,13 +24,11 @@ class PostController extends Controller
         $post = new Post();
         $form = $this->createForm('Eg\WallBundle\Form\PostType', $post);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
-
-            return $this->redirectToRoute('post_show', array('id' => $post->getId()));
         }
 
         return $this->redirectToRoute('eg_wall_homepage');
