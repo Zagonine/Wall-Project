@@ -14,6 +14,7 @@
     </div>
 
     {% for post in posts %}
+        <hr>
         <div>
             <small class="text-muted">{{ post.pseudo }}, le {{ post.datePosted | date("m/d/Y") }} | Catégorie(s) :
                 {% for category in post.categories %}
@@ -23,9 +24,6 @@
             <br>
             {{ post.content }}
         </div>
-        {% if not loop.last %}
-            <hr>
-        {% endif %}
     {% endfor %}
 
 {% endblock %}
