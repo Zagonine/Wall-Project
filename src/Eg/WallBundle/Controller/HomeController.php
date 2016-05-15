@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         //Get all post
         $em = $this->getDoctrine()->getManager();
-        $posts = $em->getRepository('EgWallBundle:Post')->findAll();
+        $posts = $em->getRepository('EgWallBundle:Post')->findBy(array(), array('id' => 'DESC'));
 
         //Create Form insert Post
         $post = new Post();

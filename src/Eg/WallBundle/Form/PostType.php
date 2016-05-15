@@ -23,7 +23,7 @@ class PostType extends AbstractType
                 'class'         => 'Eg\WallBundle\Entity\Category',
                 'expanded'      => true,
                 'multiple'      => true,
-                'required'      => false,
+                'required'      => true,
                 'query_builder' => null,
                 'by_reference'  => false,
                 'constraints'   => array(
