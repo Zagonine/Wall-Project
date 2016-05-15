@@ -29,6 +29,8 @@ class PostController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
+
+            return $this->redirectToRoute('eg_wall_homepage');
         }
 
         return $this->redirectToRoute('eg_wall_homepage', [
