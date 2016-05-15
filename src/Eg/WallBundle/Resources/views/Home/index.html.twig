@@ -16,13 +16,16 @@
     {% for post in posts %}
         <hr>
         <div>
-            <small class="text-muted">{{ post.pseudo }}, le {{ post.datePosted | date("m/d/Y") }} | Catégorie(s) :
-                {% for category in post.categories %}
-                    {{ category.name }}{% if not loop.last %},{% endif %}
-                {% endfor %}
-            </small>
-            <br>
-            {{ post.content }}
+            <p>
+                <small class="text-muted">{{ post.pseudo }}, le {{ post.datePosted | date("m/d/Y") }} | Catégorie(s) :
+                    {% for category in post.categories %}
+                        {{ category.name }}{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                </small>
+            </p>
+            <p>
+                {{ post.content }}
+            </p>
         </div>
     {% endfor %}
 
