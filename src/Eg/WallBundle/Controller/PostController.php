@@ -31,7 +31,9 @@ class PostController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('eg_wall_homepage');
+        return $this->redirectToRoute('eg_wall_homepage', [
+            'request' => $request
+        ], 307);
     }
 
     /**
