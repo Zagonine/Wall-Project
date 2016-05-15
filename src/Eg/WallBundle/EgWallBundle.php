@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace Eg\WallBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class EgWallBundle extends Bundle
 {
 }

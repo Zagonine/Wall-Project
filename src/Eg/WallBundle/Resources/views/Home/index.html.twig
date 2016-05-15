@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}The Wall Project{% endblock %}
+
+{% block body %}
+
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="text-right">
+            <input type="submit" value="Publier" class="btn btn-success"/>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+    {% for post in posts %}
+        <hr>
+        <div>
+            <p>
+                <small class="text-muted">{{ post.pseudo }}, le {{ post.datePosted | date("m/d/Y") }} | Catégorie(s) :
+                    {% for category in post.categories %}
+                        {{ category.name }}{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                </small>
+            </p>
+            <p>
+                {{ post.content }}
+            </p>
+        </div>
+    {% endfor %}
+
+{% endblock %}

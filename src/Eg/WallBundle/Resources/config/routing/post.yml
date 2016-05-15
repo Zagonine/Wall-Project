@@ -1,0 +1,4 @@
+post_new:
+    path:     /new
+    defaults: { _controller: "EgWallBundle:Post:new" }
+    methods:  [POST]

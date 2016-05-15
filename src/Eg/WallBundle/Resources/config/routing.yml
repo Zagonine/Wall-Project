@@ -1,0 +1,7 @@
+eg_wall_post:
+    resource: "@EgWallBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+eg_wall_homepage:
+    path:     /
+    defaults: { _controller: EgWallBundle:Home:index }
