@@ -43,6 +43,14 @@ class Post
     private $datePosted;
 
 
+    /**
+     * Definition of the relation between Post & Category
+     *
+     * @ORM\ManyToMany(targetEntity="Eg\WallBundle\Entity\Category", cascade={"persist"})
+     */
+    private $categories;
+
+
     public function __construct()
     {
         $this->datePosted = new \DateTime();
@@ -125,5 +133,38 @@ class Post
     public function getDatePosted()
     {
         return $this->datePosted;
+    }
+
+    /**
+     * Add categories
+     *
+     * @param \Eg\WallBundle\Entity\Category $categories
+     * @return Post
+     */
+    public function addCategory(\Eg\WallBundle\Entity\Category $categories)
+    {
+        $this->categories[] = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Remove categories
+     *
+     * @param \Eg\WallBundle\Entity\Category $categories
+     */
+    public function removeCategory(\Eg\WallBundle\Entity\Category $categories)
+    {
+        $this->categories->removeElement($categories);
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCategories()
+    {
+        return $this->categories;
     }
 }
