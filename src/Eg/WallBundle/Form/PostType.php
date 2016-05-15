@@ -30,7 +30,7 @@ class PostType extends AbstractType
                 'constraints'   => array(
                     new Count(array(
                                   'min'        => 1,
-                                  'minMessage' => 'Tu dois lier ton post à au moins 1 catégorie !',
+                                  'minMessage' => 'Tu dois choisir au moins une catégorie.',
                               )),
                 ),
             ));
