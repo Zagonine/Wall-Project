@@ -14,21 +14,7 @@ use Eg\WallBundle\Form\PostType;
  */
 class PostController extends Controller
 {
-    /**
-     * Lists all Post entities.
-     *
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $posts = $em->getRepository('EgWallBundle:Post')->findAll();
-
-        return $this->render('EgWallBundle:post:index.html.twig', array(
-            'posts' => $posts,
-        ));
-    }
-
+    
     /**
      * Creates a new Post entity.
      *
@@ -107,7 +93,7 @@ class PostController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('post_index');
+        return $this->redirectToRoute('eg_wall_homepage');
     }
 
     /**

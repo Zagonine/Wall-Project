@@ -4,4 +4,4 @@ eg_wall_post:
 
 eg_wall_homepage:
     path:     /
-    defaults: { _controller: EgWallBundle:Default:index }
+    defaults: { _controller: EgWallBundle:Home:index }
